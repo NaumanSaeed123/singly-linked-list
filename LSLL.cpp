@@ -239,7 +239,17 @@ public:
 			i == 0 ? i = 1 : i = 0;
 		}
 	}
-
+	LSLL<T> createClone()
+	{
+		LSLL<T> list2;
+		Node<T>* p = head;
+		while (p != nullptr)
+		{
+			list2.insertAtTail(p->info);
+			p = p->next;
+		}
+		return list2;
+	}
 	~LSLL()
 	{
 		while (head)
