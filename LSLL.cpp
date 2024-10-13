@@ -218,14 +218,6 @@ public:
 			return false;
 		}
 	}
-	~LSLL()
-	{
-		while (head)
-		{
-			removeAtHead();
-
-		}
-	}
 	void delAlternate()
 	{
 		if (!head)
@@ -247,36 +239,15 @@ public:
 			i == 0 ? i = 1 : i = 0;
 		}
 	}
-	LSLL<T> createClone()
-	{
-		LSLL<T> list2;
-		Node<T>* p = head;
-		while (p != nullptr)
-		{
-			list2.insertAtTail(p->info);
-			p = p->next;
-		}
-		return list2;
-	}
-	Node<T>* returnMiddleNode()
-	{
-		int count = 0;
-		Node<T>* p = head;
-		while (p != nullptr)
-		{
-			count++;
-			p = p->next;
-		}
 
-		count = count / 2 + 1;
-
-		p = head;
-		while (count > 1 && p != nullptr)
+	~LSLL()
+	{
+		while (head)
 		{
-			p = p->next;
-			count--;
+			removeAtHead();
+
 		}
-		return p;
 	}
+	
 };
 
